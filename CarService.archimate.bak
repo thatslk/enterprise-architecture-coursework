@@ -165,6 +165,8 @@
     <element xsi:type="archimate:BusinessProcess" name="Прием новых запчастей и поиск брака" id="id-546ee5af04ed45c89b1b507671d4fef1"/>
     <element xsi:type="archimate:BusinessProcess" name="Распределение товара по складу" id="id-fde53e85af36452c8248ababed12584c"/>
     <element xsi:type="archimate:BusinessObject" name="Новые запчасти на складе" id="id-f861a1980d8346bcbe8e40422992ebe8"/>
+    <element xsi:type="archimate:BusinessEvent" name="Нехватка запчастей" id="id-b8a4e465d53b494cac6697e33347432a"/>
+    <element xsi:type="archimate:BusinessFunction" name="Уборка боксов" id="id-dd7fb7a3f6634b6db7a933fad4a9746f"/>
   </folder>
   <folder name="Application" id="id-78866a10cfee4f1994b261a0c3cda3fd" type="application">
     <element xsi:type="archimate:ApplicationComponent" name="Application Component" id="id-ed0372e89b2e44c99c7c6743c5efc793"/>
@@ -384,6 +386,7 @@
     <element xsi:type="archimate:TriggeringRelationship" id="id-47f7bd8430c7470f891ae0c0b93c5d00" source="id-49ef2ce9b0574161be1dc6b3df25dc5b" target="id-546ee5af04ed45c89b1b507671d4fef1"/>
     <element xsi:type="archimate:TriggeringRelationship" id="id-4dfffb1c890446fe9d0dc5b5fea67168" source="id-546ee5af04ed45c89b1b507671d4fef1" target="id-fde53e85af36452c8248ababed12584c"/>
     <element xsi:type="archimate:AccessRelationship" id="id-eaf469d491c64ae9916d851c6d19c9b9" source="id-fde53e85af36452c8248ababed12584c" target="id-f861a1980d8346bcbe8e40422992ebe8"/>
+    <element xsi:type="archimate:AssociationRelationship" id="id-054170c2885d41c88bd0ecd2fe457ede" source="id-b8a4e465d53b494cac6697e33347432a" target="id-91fe569a4d5d48cb9067505267a3c26d"/>
   </folder>
   <folder name="Views" id="id-65f43487c1a04698b560becef3a92982" type="diagrams">
     <element xsi:type="archimate:ArchimateDiagramModel" name="Default View" id="id-3d5ea752c1114aa7b561ae4cfc4de828">
@@ -1014,7 +1017,7 @@
           <sourceConnection xsi:type="archimate:Connection" id="id-e436863e6d0e4e6287e1b10627f8c780" source="id-ea185a308c01444baf4ec308d68c87bc" target="id-6dd062bf1dcd46229c84ae533e79db36" archimateRelationship="id-3358bd7467184095904eb566bd422beb"/>
           <sourceConnection xsi:type="archimate:Connection" id="id-4b61e7ee5e704d008bd1c1cc71e8c3bb" source="id-ea185a308c01444baf4ec308d68c87bc" target="id-b3eb863e55724eb6b43820c0c30d03ea" archimateRelationship="id-65e49592acd341ad841aad28d7cb19aa"/>
           <sourceConnection xsi:type="archimate:Connection" id="id-f3a737b86cfd41998a80cf399ba688ee" source="id-ea185a308c01444baf4ec308d68c87bc" target="id-7603b5d2af0946028f8f09de442b7bcb" archimateRelationship="id-f3850fbc1a5142f6a81e2d7a1c3cd353"/>
-          <child xsi:type="archimate:DiagramObject" id="id-6dd062bf1dcd46229c84ae533e79db36" targetConnections="id-e436863e6d0e4e6287e1b10627f8c780 id-8b7acd20695141a3aa0c5261fda83350 id-db02c30d3541492ebcff18f95e20b128" archimateElement="id-91fe569a4d5d48cb9067505267a3c26d">
+          <child xsi:type="archimate:DiagramObject" id="id-6dd062bf1dcd46229c84ae533e79db36" targetConnections="id-e436863e6d0e4e6287e1b10627f8c780 id-db02c30d3541492ebcff18f95e20b128 id-bef186724082440a9ff47a7be7172a4b" archimateElement="id-91fe569a4d5d48cb9067505267a3c26d">
             <bounds x="228" y="12" width="156" height="73"/>
             <sourceConnection xsi:type="archimate:Connection" id="id-9e3a8f91f6d4485f9723d82ac751ebb5" source="id-6dd062bf1dcd46229c84ae533e79db36" target="id-6948dc00e0534b6eaa01a0f8bfb6151f" archimateRelationship="id-a742822a167b4164a3ae641ebaf4b282">
               <bendpoint startX="174" endX="6" endY="-108"/>
@@ -1057,12 +1060,17 @@
           </child>
         </child>
       </child>
-      <child xsi:type="archimate:DiagramObject" id="id-e299b35af19149f2919e50709a5f3591" archimateElement="id-bc23c77f333147a6ae4e34566d0dd91e">
-        <bounds y="276" width="156" height="55"/>
-        <sourceConnection xsi:type="archimate:Connection" id="id-8b7acd20695141a3aa0c5261fda83350" source="id-e299b35af19149f2919e50709a5f3591" target="id-6dd062bf1dcd46229c84ae533e79db36" archimateRelationship="id-49b995a5e865459bae279ac319113238"/>
-      </child>
       <child xsi:type="archimate:DiagramObject" id="id-fdfb1287a2834a6e835ff5a81b955a4b" targetConnections="id-e5430029545346338cb095adba006039" archimateElement="id-f861a1980d8346bcbe8e40422992ebe8">
         <bounds x="1548" y="276" width="144" height="55"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-422d97bab4ce45dbb68e21e2d2368a0a" archimateElement="id-b8a4e465d53b494cac6697e33347432a">
+        <bounds x="72" y="276" width="120" height="55"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-bef186724082440a9ff47a7be7172a4b" source="id-422d97bab4ce45dbb68e21e2d2368a0a" target="id-6dd062bf1dcd46229c84ae533e79db36" archimateRelationship="id-054170c2885d41c88bd0ecd2fe457ede"/>
+      </child>
+    </element>
+    <element xsi:type="archimate:ArchimateDiagramModel" name="Уборка боксов" id="id-83aea697e1e5491f93d9015219bdc036">
+      <child xsi:type="archimate:DiagramObject" id="id-5ab4f77993344f8f9884cb30ee28ea12" archimateElement="id-dd7fb7a3f6634b6db7a933fad4a9746f">
+        <bounds x="204" y="48" width="1093" height="529"/>
       </child>
     </element>
   </folder>
